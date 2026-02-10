@@ -22,7 +22,7 @@
         "repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*(?<packageName>\\S+)\\s+targetRevision:\\s*(?<currentValue>\\S+)",
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "helm-docker/{{{packageName}}}",
+      "depNameTemplate": "helm-oci/{{{packageName}}}",
     },
   ],
 
