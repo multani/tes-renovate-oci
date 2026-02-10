@@ -1,0 +1,41 @@
+{
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "app*.yaml",
+        "!app-thanos.yaml",
+      ],
+      "matchStrings": [
+        "repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*(?<packageName>\\S+)\\s+targetRevision:\\s*(?<currentValue>\\S+)",
+      ],
+      "datasourceTemplate": "helm",
+      "depNameTemplate": "helm-oci/{{{packageName}}}",
+    },
+
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "app-thanos.yaml",
+      ],
+      "matchStrings": [
+        "repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*(?<packageName>\\S+)\\s+targetRevision:\\s*(?<currentValue>\\S+)",
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "helm-oci/{{{packageName}}}",
+    },
+  ],
+
+  "packageRules": [
+    {
+      "matchDepNames": ["helm-oci/cert-manager"],
+      "changelogUrl": "https://github.com/cert-manager/cert-manager",
+      "registryUrls": ["https://charts.jetstack.io"],
+    },
+    {
+      "matchDepNames": ["helm-oci/thanos"],
+      "changelogUrl": "https://github.com/bitnami/charts",
+      "registryUrls": ["oci://registry-1.docker.io/bitnamicharts"],
+    },
+  ],
+}
