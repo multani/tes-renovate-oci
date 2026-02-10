@@ -8,7 +8,6 @@
       ],
       "matchStrings": [
         "repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*(?<packageName>\\S+)\\s+targetRevision:\\s*(?<currentValue>\\S+)",
-        "!/repoURL: europe-docker.pkg.dev\/test\/vendor-helm-charts\/.+\\s+chart:\\s*thanos\\s+targetRevision:\\s*(?<currentValue>\\S+)/",
       ],
       "datasourceTemplate": "helm",
       "depNameTemplate": "helm-oci/{{{packageName}}}",
@@ -37,6 +36,11 @@
       "matchDepNames": ["helm-docker/thanos"],
       "changelogUrl": "https://github.com/bitnami/charts",
       "registryUrls": ["oci://registry-1.docker.io/bitnamicharts/thanos"],
+    },
+    {
+      "matchDepNames": ["helm-oci/thanos"],
+      "matchDatasources": ["helm"],
+      "enabled": false,
     },
   ],
 }
