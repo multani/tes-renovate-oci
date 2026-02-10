@@ -4,7 +4,7 @@
       "customType": "regex",
       "managerFilePatterns": [
         "app*.yaml",
-        "!app-thanos.yaml",
+        "!/app-thanos.yaml/",
       ],
       "matchStrings": [
         "repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*(?<packageName>\\S+)\\s+targetRevision:\\s*(?<currentValue>\\S+)",
