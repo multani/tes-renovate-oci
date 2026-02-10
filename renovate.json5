@@ -4,7 +4,7 @@
       "customType": "regex",
       "managerFilePatterns": [
         "app*.yaml",
-        "!/app-thanos.yaml/",
+        "!app-thanos.yaml",
       ],
       "matchStrings": [
         "repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*(?<packageName>\\S+)\\s+targetRevision:\\s*(?<currentValue>\\S+)",
@@ -22,7 +22,7 @@
         "repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*(?<packageName>\\S+)\\s+targetRevision:\\s*(?<currentValue>\\S+)",
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "helm-oci/{{{packageName}}}",
+      "depNameTemplate": "helm-docker/{{{packageName}}}",
     },
   ],
 
@@ -33,7 +33,7 @@
       "registryUrls": ["https://charts.jetstack.io"],
     },
     {
-      "matchDepNames": ["helm-oci/thanos"],
+      "matchDepNames": ["helm-docker/thanos"],
       "changelogUrl": "https://github.com/bitnami/charts",
       "registryUrls": ["oci://registry-1.docker.io/bitnamicharts"],
     },
