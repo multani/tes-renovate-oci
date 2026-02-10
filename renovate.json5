@@ -35,7 +35,7 @@
     {
       "matchDepNames": ["helm-docker/thanos"],
       "changelogUrl": "https://github.com/bitnami/charts",
-      "registryUrls": ["oci://registry-1.docker.io/bitnamicharts"],
+      "registryUrls": ["oci://registry-1.docker.io/bitnamicharts/thanos"],
     },
   ],
 }
