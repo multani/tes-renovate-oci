@@ -5,10 +5,10 @@
       "customType": "regex",
       "managerFilePatterns": [
         "app*.yaml",
-        "!app-thanos.yaml",
       ],
       "matchStrings": [
         "repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*(?<packageName>\\S+)\\s+targetRevision:\\s*(?<currentValue>\\S+)",
+        "!repoURL: europe-docker.pkg.dev/test/vendor-helm-charts/.+\\s+chart:\\s*thanos\\s+targetRevision:\\s*(?<currentValue>\\S+)",
       ],
       "datasourceTemplate": "helm",
       "depNameTemplate": "helm-oci/{{{packageName}}}",
