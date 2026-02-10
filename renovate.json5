@@ -41,7 +41,7 @@
       "registryUrls": ["https://charts.jetstack.io"],
     },
     {
-      "matchDepNames": ["helm-docker/thanos"],
+      "matchDepNames": ["helm-oci/thanos"],
       "changelogUrl": "https://github.com/bitnami/charts",
       "registryUrls": ["https://registry-1.docker.io/bitnamicharts"],
 
