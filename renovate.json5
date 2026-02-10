@@ -28,6 +28,14 @@
 
   "packageRules": [
     {
+      "matchDepNames": [
+        "helm-oci/**",
+        "helm-docker/**",
+        "helm/**",
+      ],
+      "commitMessageTopic": "Helm Chart {{{packageName}}}",
+    },
+    {
       "matchDepNames": ["helm-oci/cert-manager"],
       "changelogUrl": "https://github.com/cert-manager/cert-manager",
       "registryUrls": ["https://charts.jetstack.io"],
@@ -36,6 +44,7 @@
       "matchDepNames": ["helm-docker/thanos"],
       "changelogUrl": "https://github.com/bitnami/charts",
       "registryUrls": ["https://registry-1.docker.io/bitnamicharts"],
+
     },
     {
       "matchDepNames": ["helm-oci/thanos"],
